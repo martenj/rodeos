@@ -1,0 +1,25 @@
+name: "sphinx: check"
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.6'
+          architecture: 'x64'
+
+      - name: Install dependencies
+        run: |
+          python3 -m pip install -r requirements/base.txt
+
+      - run: |
+          cd docs
+          make clean html
