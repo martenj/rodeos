@@ -19,6 +19,7 @@ Please also refer to the
     :caption: Introduction
 
     intro_overview
+    intro_components
     intro_related_software
 
 .. toctree::
