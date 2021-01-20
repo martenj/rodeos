@@ -15,7 +15,7 @@ RODEOS Components
 Used Software
 -------------
 
-`iRODS <https://www.irods.org>`__
+`iRODS <https://irods.org>`__
     RODEOS uses iRODS for data and meta data storage.
 
 `irods_capability_automated_ingest <https://github.com/irods/irods_capability_automated_ingest>`__

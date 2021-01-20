@@ -29,3 +29,15 @@ Please also refer to the
     impl_sequencers
     impl_demux
     impl_reference
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Use Cases
+
+    use_sequencing
+    use_demultiplexing
+    use_deliver_fastq
+    use_deliver_bcl
+    use_share_collections
+    use_access_irods
+    use_access_webdav
