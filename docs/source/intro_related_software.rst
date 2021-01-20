@@ -1,7 +1,7 @@
-.. _related_projects:
+.. _related_Software:
 
 ================
-Related Projects
+Related Software
 ================
 
 -----------------

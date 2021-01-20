@@ -16,13 +16,16 @@ Please also refer to the
 
 .. toctree::
     :maxdepth: 1
-    :caption: Contents
+    :caption: Introduction
 
-    introduction
-    related_software
+    intro_overview
+    intro_related_software
 
 .. toctree::
     :maxdepth: 1
     :caption: Implementation Details
 
+    impl_ingest
     impl_sequencers
+    impl_demux
+    impl_reference
