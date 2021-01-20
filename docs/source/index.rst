@@ -29,11 +29,15 @@ Please also refer to the
     impl_sequencers
     impl_demux
     impl_reference
+    impl_rules
 
 .. toctree::
     :maxdepth: 1
     :caption: Use Cases
 
+    use_team_setup
+    use_customer_setup
+    use_project_setup
     use_sequencing
     use_demultiplexing
     use_deliver_fastq
