@@ -11,15 +11,13 @@ The system itself is based on the `iRODS <https://irods.org>`__ ecosystem:
 
 This is the main entry point for the documentation.
 It describes the big picture and how the different components interact.
-
-Please also refer to the
+Where appropriate, it references to the (external) documentation of the particular components.
 
 .. toctree::
     :maxdepth: 1
     :caption: Introduction
 
     intro_overview
-    intro_components
     intro_related_software
 
 .. toctree::
@@ -30,19 +28,12 @@ Please also refer to the
     impl_sequencers
     impl_demux
     impl_reference
-    impl_rules
+    impl_custom_irods
 
 .. toctree::
     :maxdepth: 1
     :caption: Use Cases
 
-    use_team_setup
-    use_customer_setup
-    use_project_setup
-    use_sequencing
-    use_demultiplexing
-    use_deliver_fastq
-    use_deliver_bcl
-    use_share_collections
-    use_access_irods
-    use_access_webdav
+    use_case_admin
+    use_case_facility
+    use_case_customer

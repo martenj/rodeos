@@ -16,9 +16,10 @@ jobs:
           python-version: '3.6'
           architecture: 'x64'
 
-      - name: Install dependencies
+      - name: Install dependencies & self
         run: |
           python3 -m pip install -r requirements/base.txt
+          pip install -e .
 
       - run: |
           cd docs

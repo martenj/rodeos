@@ -18,12 +18,13 @@
 # -- Project information -----------------------------------------------------
 
 project = 'RODEOS'
-copyright = '2021, Manuel Holtgrewe, Dieter Beule'
+copyright = '2021, Core Unit Bionformatics, Berlin Institute of Health'
 author = 'Manuel Holtgrewe, Dieter Beule'
 
-# The full version, including alpha/beta/rc tags
-release = 'v0.1'
+import rodeos
 
+# The full version, including alpha/beta/rc tags
+release = rodeos.__version__
 
 # -- General configuration ---------------------------------------------------
 
@@ -42,6 +43,8 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
+numfig = True
+numfig_format = {"figure": "Figure %s"}
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -54,3 +57,7 @@ html_theme = 'sphinx_rtd_theme'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+html_theme_options = {
+    'navigation_depth': 2,
+}
