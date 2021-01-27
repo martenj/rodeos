@@ -25,5 +25,18 @@ This allows using so-called machine accounts and/or enabling automatically loggi
 The instrument can only see the data that is currently being written and ingested.
 Once complete, the data is moved into a location that it cannot access.
 
+Note that the ingest process is regularly running with at most one process at a given time.
+The ingest is implemented in a "updating" fashion similar to ``rsync`` (technically commonly referred to as being "idempotent") which means that incomplete transfers are continued in the next ingest cycle until complete.
+
+Limitations of the ingest process include the following (the list will be updated as the authors are getting aware of more limitations).
+
+1. In the case that an instrument does not complete (e.g., power loss or component defects), human -intervention is required to decide further actions and remove the partially written data if needed.
+2. It is expected that the pause between two instruments runs (e.g., needed for a cleaning step in the lab) is sufficient to ingest data before the next instrument run.
+   In the case that the run is started before the previous ingest step is complete, the not yet ingested data set will remain in the landing zone.
+   The operator has to take measure to ensure that no data is overwritten.
+
+   It is common for instruments to write to a storage location where data is not moved automatically, and distinct output folder or file names are usually used for each run (e.g., incorporating the insturment ID and run number).
+   It is thus not expected that this limitation is neglegible.
+
 The following sections give an overview and rationales for the import of the supported data types.
 Technical details about the ingest steps are described in the `rodeos-ingest <https://rodeos-ingest.readthedocs.io/>`__ software package's documentation.

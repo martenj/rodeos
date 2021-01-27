@@ -23,3 +23,8 @@ In the case of not being able to configure file mounts through the Windows Activ
 
 Such files can be placed directly on the Windows Desktop and the instrument operator can connect the network shares before starting the sequencing.
 RODEOS will move the sequencing data directly after detecting that the sequencing is complete such that persons accessing the instrument can only see the currently run being written (if any).
+The files used for detection the completion state depending on the instrument model and device software, e.g., ``RTAComplete.txt`` for certain combinations.
+
+Adding support for further device types is well possible because of the extensible nature of RODEOS.
+Support for mass spectometry machines is forthcoming.
+An evaluation of support for PacBio or Oxford Nanopore sequencing machines will be evaluated but these devices are more tightly integrated with the vendor's processing software.

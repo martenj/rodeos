@@ -36,7 +36,7 @@ Shadow directories
 
 For data processing that runs on the HPC system, the data generation (through processing) is implemented as follows.
 Both landing zones and shadow directories are also managed below the ``/rodeos/lz`` directory as above but they are not shared via the network.
-Instead, there are dedicated Unix users for the data processing and unix groups and permissions are used such that the processing user can write into the landing zone but cannot access the shadow folder.
+Instead, there are dedicated Unix users for the data processing (that is separate from the instrument's Unix user) and Unix groups and permissions are used such that the processing user can write into the landing zone but cannot access the shadow folder.
 
 -----------
 Data Ingest
@@ -62,7 +62,10 @@ Data Delivery
 -------------
 
 Data delivery has been implemented as described in the use case section.
-The process is summarized as below.
+For delivery, it is assume that the genomics unit staff creates a dedicated collection for each project (the definition of a "project" depends on the genomics unit).
+Data from one or more sequencing runs (either a whole or parts of a run) can be delivered by moving or copying it into that collection in RODEOS iRODS.
+
+The delivery process is summarized as below.
 Once the data is ready:
 
 - genomics facility staff
