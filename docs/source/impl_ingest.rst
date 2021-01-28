@@ -25,6 +25,21 @@ This allows using so-called machine accounts and/or enabling automatically loggi
 The instrument can only see the data that is currently being written and ingested.
 Once complete, the data is moved into a location that it cannot access.
 
+Multi-step pipelines with multiple ingest can also be implemented.
+:numref:`fig_demux_ingest` gives the base call to sequence conversion for genomics facilities as an example.
+The sequence conversion software bcl2fastq reads the base call (BCL) files from a disk location that it can access (directly from the shadow directory as shown here or after staging data from the iRODS data store to the local disk).
+It writes into a landing zone dedicated to the generation of the sequence FASTQ files.
+
+.. _fig_demux_ingest:
+
+.. figure:: _static/figures/rodeos-demux.png
+    :alt: example of data process with ingest
+
+    Overview of the combined process of data processing followed by ingest with sequencing base call to sequence conversion as an example.
+
+Another ingest process runs and transfers the data from the FASTQ landing zone into iRODS.
+As for all RODEOS ingest processes, the data is moved into the shadow directory for the FASTQ landing zone once complete.
+
 Note that the ingest process is regularly running with at most one process at a given time.
 The ingest is implemented in a "updating" fashion similar to ``rsync`` (technically commonly referred to as being "idempotent") which means that incomplete transfers are continued in the next ingest cycle until complete.
 

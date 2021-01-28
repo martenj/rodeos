@@ -62,7 +62,7 @@ Data Delivery
 -------------
 
 Data delivery has been implemented as described in the use case section.
-For delivery, it is assume that the genomics unit staff creates a dedicated collection for each project (the definition of a "project" depends on the genomics unit).
+For delivery, it is assume that the genomics unit staff creates a dedicated collection for each project (the definition of a "project" depends on the genomics unit, e.g. a service order).
 Data from one or more sequencing runs (either a whole or parts of a run) can be delivered by moving or copying it into that collection in RODEOS iRODS.
 
 The delivery process is summarized as below.
