@@ -12,7 +12,7 @@ This step can be adjusted appropriately for other data generation unit types.
 Group Management for Customers
 ------------------------------
 
-In this use case, facility staff users want to manage their customers in groups in iRODS.
+In this use case, facility staff members want to manage their customers in groups in iRODS.
 For new customers they want to create a new group or for retired customers they want to remove groups.
 At any other time they want to add/remove users to/from groups.
 
@@ -70,7 +70,7 @@ Prerequisites
 Steps
 =====
 
-- Connect network drive for the network share for the sequencer if necessary.
+- Connect network drive to the network share for the sequencer if necessary.
 - Write data to this network share.
 - Wait until data generation is complete.
 - The output folder will be moved into the shadow landing zone folder afterwards.
@@ -113,7 +113,7 @@ Steps
 
 Use Metalnx to:
 
-- create an output collection in the project collection, e.g., named like the flow cell
+- create an output collection in the project collection, e.g., named like the flowcell
 - go to the folder with the digestiflow demux results
 - mark the files and/or folders to move
 - move them into the output directory
@@ -133,7 +133,7 @@ Prerequisites
 Caveats
 =======
 
-- It is best practice to have only location from which data is shared.
+- It is best practice to have only one location from which data is shared.
 - Raw data should probably not be shared even read-only.
 - For BCL raw data, providing archives as created by Digestiflow are more efficiently shared than the tens of thousands of files in a run folder.
 
@@ -141,4 +141,4 @@ Steps
 =====
 
 - Use Metalnx to set the appropriate permissions on the raw data folder.
-- Share the path to this folder with the customer together with instructions how to access the data.
+- Share the path to this folder with the customer together with instructions on how to access the data.
