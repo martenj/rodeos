@@ -19,7 +19,7 @@ At any other time they want to add/remove users to/from groups.
 Prerequisites
 =============
 
-- The user must have been properly setup by the RODEOS / iRODS administrator.
+- An account must have been properly setup for the user by the RODEOS / iRODS administrator.
   This includes allowing access to privilege for the administration of groups.
 - The user must know the prefix for the groups that they can manage (e.g., ``gen-cha::cust::``).
 - The user must have setup iRODS iCommands correctly and have configured ``~/.irods/irods_environment.json`` properly.
@@ -37,7 +37,8 @@ Steps
 Create New Project Collection
 -----------------------------
 
-In this use case, a facility staff member creates a new project collection.
+In this use case, a facility staff member creates a new project collection ("collection" is the iRODS term for a folder in the iRODS storage system).
+Such a project collection serves as the location for resulting data to share with the customer.
 This collection will have read permissions set for the customer group/user recursively and permission inheritance is enabled.
 This way, customer users can download the data once it has been provided.
 
@@ -53,7 +54,7 @@ Use Metalnx to
 
 - create a new folder in the ``projects`` collection of the facility
 - make sure that ``inheritance`` is enabled for the collection and use ``Apply recursively`` to apply this to all existing sub folders
-- configure permission and add a new ACL for the customer group or user with the ``READ`` permission, make sure to select ``Apply to subcollections and files`` such that
+- configure permission and add a new ACL for the customer group or user with the ``READ`` permission, make sure to select ``Apply to subcollections and files`` such that existing and data placed in the directory afterwards gets the correct permissions setup
 
 ----------------------
 Perform Sequencing Run
@@ -95,6 +96,8 @@ Steps
 - The resulting data will appear in the ``FASTQ`` collection in iRODS.
 - The meta data ``rodeos::ingest::status`` will be set to ``complete`` once done.
 
+.. _use_facility_deliver_conversion_results:
+
 --------------------------
 Deliver Conversion Results
 --------------------------
@@ -117,7 +120,12 @@ Use Metalnx to:
 - go to the folder with the digestiflow demux results
 - mark the files and/or folders to move
 - move them into the output directory
+- in the case that additional data is required for delivery (e.g., manually created QC reports)
+    - the facility staff generates the reports, and
+    - copies them into the project folder
 - notify the customer about the arrival of new data and instructions how to access the data
+
+.. _use_facility_deliver_raw_data:
 
 -----------------------
 Provide Raw Data Access
@@ -142,3 +150,30 @@ Steps
 
 - Use Metalnx to set the appropriate permissions on the raw data folder.
 - Share the path to this folder with the customer together with instructions on how to access the data.
+
+--------------------------
+External Customer Delivery
+--------------------------
+
+In this use case, facility staff wants to deliver data to external customers.
+
+Prerequisites
+=============
+
+- The customer must be provided with an identity in the host organization's user account directory (e.g. ActiveDirectory).
+  The account can be limited but at least a user name and password must exist.
+  The rationale is that for the transfer of human data which will be necessary in the general case, it will be required that the receiving party is a natural human being whose identity is verified, e.g., by the human resource department.
+
+Steps & Caveats
+===============
+
+Once the customer has an identity in the host organization's user account directory, the delivery process is very similar to the use cases :ref:`use_facility_deliver_conversion_results` and :ref:`use_facility_deliver_raw_data` apply.
+However, facility staff will have to mark the result iRODS collection (using iRODS meta data through the graphical Metalnx) to be delivered through a particular server that is also reachable from the outside.
+
+Status
+======
+
+This use case has been registered but not implemented yet.
+It is expected to be implemented at a later milestone.
+
+Until then, other delivery means have to be used with preexisting means.
