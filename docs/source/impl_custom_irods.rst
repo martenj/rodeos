@@ -18,7 +18,7 @@ Microservices
 -------------
 
 The software `irods-sudo-microservices <https://github.com/UtrechtUniversity/irods-sudo-microservices>`__ has been installed on the iRODS provider (catalogue) server.
-These allow to implement rules with privilege escalation.
+This allows to implement rules with privilege escalation.
 
 ------------
 AVU Prefixes

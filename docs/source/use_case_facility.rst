@@ -12,14 +12,14 @@ This step can be adjusted appropriately for other data generation unit types.
 Group Management for Customers
 ------------------------------
 
-In this use case, facility staff users want to manage their customers in groups in iRODS.
+In this use case, facility staff members want to manage their customers in groups in iRODS.
 For new customers they want to create a new group or for retired customers they want to remove groups.
 At any other time they want to add/remove users to/from groups.
 
 Prerequisites
 =============
 
-- The user must have been properly setup by the RODEOS / iRODS administrator.
+- An account must have been properly setup for the user by the RODEOS / iRODS administrator.
   This includes allowing access to privilege for the administration of groups.
 - The user must know the prefix for the groups that they can manage (e.g., ``gen-cha::cust::``).
 - The user must have setup iRODS iCommands correctly and have configured ``~/.irods/irods_environment.json`` properly.
@@ -54,7 +54,7 @@ Use Metalnx to
 
 - create a new folder in the ``projects`` collection of the facility
 - make sure that ``inheritance`` is enabled for the collection and use ``Apply recursively`` to apply this to all existing sub folders
-- configure permission and add a new ACL for the customer group or user with the ``READ`` permission, make sure to select ``Apply to subcollections and files`` such that
+- configure permission and add a new ACL for the customer group or user with the ``READ`` permission, make sure to select ``Apply to subcollections and files`` such that existing and data placed in the directory afterwards gets the correct permissions setup
 
 ----------------------
 Perform Sequencing Run
